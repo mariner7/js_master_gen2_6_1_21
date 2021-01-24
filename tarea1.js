@@ -143,7 +143,7 @@ Persona.prototype.guardarEnLocalStorage = function() {
 }
 
 Persona.prototype.guardarEnSessionStorage = function() {
-  sessionStorage.setItem(this.nombreCompleto, this.edad) + " años";
+  sessionStorage.setItem(this.nombreCompleto, this.edad + " años");
 }
 
 var padre = new Persona("Domingo Domínguez", 53);
@@ -152,4 +152,4 @@ var madre = new Persona("Martica Martínez", 48);
 padre.guardarEnLocalStorage();
 padre.guardarEnSessionStorage();
 madre.guardarEnLocalStorage();
-madre.guardarEnSessionStorage(); 
+madre.guardarEnSessionStorage();
