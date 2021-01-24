@@ -133,6 +133,7 @@ dadoJugador();
 * Al guardar estos elementos, deben visualizarse a través del debugger de chrome o de algún otro browser.
 */
 
+//Prototipo Persona
 function Persona(nombreCompleto, edad) {
   this.nombreCompleto = nombreCompleto;
   this.edad = edad;
