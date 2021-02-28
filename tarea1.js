@@ -140,17 +140,19 @@ function Persona(nombreCompleto, edad) {
 }
 
 Persona.prototype.guardarEnLocalStorage = function() {
-  localStorage.setItem(this.nombreCompleto, this.edad + " años");
+  localStorage.setItem('nombre' this.nombreCompleto);
+  localStorage.setItem('edad', this.edad + " años");
 }
 
 Persona.prototype.guardarEnSessionStorage = function() {
-  sessionStorage.setItem(this.nombreCompleto, this.edad + " años");
+  sessionStorage.setItem('nombre', this.nombreCompleto);
+  sessionStorage.setItem('edad', this.edad + " años");
 }
 
 var padre = new Persona("Domingo Domínguez", 53);
-var madre = new Persona("Martica Martínez", 48);
+//var madre = new Persona("Martica Martínez", 48);
 
 padre.guardarEnLocalStorage();
 padre.guardarEnSessionStorage();
-madre.guardarEnLocalStorage();
-madre.guardarEnSessionStorage();
+/*madre.guardarEnLocalStorage();
+madre.guardarEnSessionStorage();*/
