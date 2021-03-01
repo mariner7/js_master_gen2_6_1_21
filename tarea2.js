@@ -6,7 +6,7 @@
 const mascotas = {
     familias: ['perros', 'gatos', 'canarios', 'pez', 'serpiente'],
     eliminarMascota: function(familia) {
-        this.familias = this.familias.splice(this.familias.indexOf(familia), 1)
+        this.familias.splice(this.familias.indexOf(familia), 1)
         return this.familias
     },
     eliminarUltimaMascota: function() {
@@ -18,8 +18,8 @@ const mascotas = {
         return this.familias
     },
     contadorMascota: function() {
-        let contador = 0
-        let mensaje
+        var contador = 0
+        var mensaje
         this.familias.forEach(function(familia, index, array) {
             if(familia.endsWith('os')) { //también podría ser familia.substr(-2) === 'os'
                 contador++
