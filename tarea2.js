@@ -55,15 +55,40 @@ const trabajador = {
     
 }
 
-function informacion(trabajador) {
-    if(!trabajador.hijos) {
-        var hijos = `no tiene hijos`
+const {
+    nombre: nombreTrabajador,
+    cargo,
+    empresa,
+    gustos: [primerGusto, ...restoGustos],
+    hijos = '(Sin hijos)',
+
+} = trabajador;
+
+const{
+    ubicacion,
+    datos,
+    clientes: [primerCliente, ...restoClientes],
+} = empresa;
+
+const {
+    comuna,
+    puesto,
+} = ubicacion
+
+const {
+    nombre,
+} = datos;
+
+const informacion = function (trabajador) {
+    if(hijos === null) {
+        var hijosMensaje = `no tiene hijos`
     } else {
-        var hijos = `tiene ${trabajador.hijos}`
+        var hijosMensaje = `tiene ${hijos}`
     }
-    return `El trabajador ${trabajador.nombre} trabaja en ${trabajador.empresa.datos.nombre} con cargo ${trabajador.cargo} y le gusta ${trabajador.gustos[0]} y ${trabajador.gustos.length - 1 } más, ${hijos}`
+    return `El trabajador ${nombreTrabajador} trabaja en ${nombre} con cargo ${cargo} y le gusta ${primerGusto} y ${restoGustos.length} más, ${hijosMensaje}`
 }
 
-function laboral(trabajador) {
-    return `El trabajador ${trabajador.nombre} va a su trabajo en ${trabajador.empresa.ubicacion.comuna}, es ${trabajador.cargo}, en el puesto ${trabajador.empresa.ubicacion.puesto}, trabaja con ${trabajador.empresa.clientes[0]} y ${trabajador.empresa.clientes[1]}`
+const laboral = function (trabajador) {
+    return `El trabajador ${nombreTrabajador} va a su trabajo en ${comuna}, es ${cargo}, en el puesto ${puesto}, trabaja con ${primerCliente} y ${restoClientes}`
 }
+
